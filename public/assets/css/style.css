@@ -1,0 +1,36 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #1f2937;
+    background-color: #f3f4f6;
+}
+
+/* Container centré (mobile-first) */
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 3rem 1.5rem;
+    }
+}
