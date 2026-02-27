@@ -1,35 +1,34 @@
-<html lang="en" vid="0">
+<html lang="en">
 
-<head vid="1">
-    <meta charset="UTF-8" vid="2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
-    <title vid="4">PowerCore Elite - Product Page</title>
-    <style vid="5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime 20K Power Bank - Product Page</title>
+    <style>
         :root {
-
             --bg-color: #050505;
             --surface-color: #0f0f0f;
+            --surface-elevated: #141414;
             --text-primary: #FFFFFF;
-            --text-secondary: #888888;
-            --text-tertiary: #444444;
+            --text-secondary: #A4A4A4;
+            --text-tertiary: #5F5F5F;
             --accent-border: #222222;
-
-
+            --accent-success: #4CAF50;
+            --accent-warning: #f6c344;
             --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             --font-size-label: 0.75rem;
             --letter-spacing-label: 0.15em;
-
-
-            --radius-sm: 4px;
-            --radius-md: 8px;
+            --radius-sm: 6px;
+            --radius-md: 12px;
             --radius-pill: 100px;
-
-
+            --spacing-2xs: 4px;
             --spacing-xs: 8px;
             --spacing-sm: 16px;
-            --spacing-md: 32px;
-            --spacing-lg: 64px;
-            --spacing-xl: 120px;
+            --spacing-md: 24px;
+            --spacing-lg: 40px;
+            --spacing-xl: 64px;
+            --spacing-2xl: 96px;
+            --container-max: 1280px;
         }
 
         * {
@@ -38,14 +37,35 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: var(--font-family);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            padding-bottom: 84px;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+            border-top: 1px solid var(--accent-border);
+        }
 
         .text-label {
             font-size: var(--font-size-label);
@@ -56,7 +76,7 @@
         }
 
         .text-h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 7.5vw, 3.5rem);
             font-weight: 200;
             letter-spacing: -0.02em;
             line-height: 1.1;
@@ -64,9 +84,10 @@
         }
 
         .text-h2 {
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.4rem);
             font-weight: 300;
             color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
         }
 
         .text-body {
@@ -75,25 +96,24 @@
             font-weight: 400;
         }
 
-
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
+            height: 72px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 var(--spacing-md);
-            background: rgba(5, 5, 5, 0.8);
+            padding: 0 var(--spacing-sm);
+            background: rgba(5, 5, 5, 0.85);
             backdrop-filter: blur(10px);
             z-index: 100;
             border-bottom: 1px solid var(--accent-border);
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             gap: var(--spacing-md);
         }
 
@@ -105,17 +125,21 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: var(--text-primary);
+        }
+
+        .cart-count {
             color: var(--text-primary);
         }
 
         .main-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr;
+            padding-top: 72px;
             min-height: 100vh;
-            padding-top: 80px;
         }
-
 
         .product-stage {
             position: relative;
@@ -123,27 +147,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: var(--spacing-lg);
-            border-right: 1px solid var(--accent-border);
+            min-height: 54vh;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            border-bottom: 1px solid var(--accent-border);
             overflow: hidden;
         }
 
-
         .device-mockup {
-            width: 300px;
-            height: 500px;
+            width: min(72vw, 340px);
+            aspect-ratio: 3 / 5;
             background: linear-gradient(135deg, #222 0%, #0a0a0a 100%);
             border-radius: 40px;
-            box-shadow:
-                20px 20px 60px #000000,
-                -5px -5px 20px #1a1a1a;
+            box-shadow: 20px 20px 60px #000000, -5px -5px 20px #1a1a1a;
             position: relative;
-            transform: rotate(-15deg);
+            transform: rotate(-10deg);
             transition: transform 0.5s ease;
         }
 
         .device-mockup::before {
-
             content: "ANKR";
             position: absolute;
             bottom: 40px;
@@ -156,7 +177,6 @@
         }
 
         .device-mockup::after {
-
             content: "";
             position: absolute;
             top: 40px;
@@ -169,24 +189,17 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        .product-stage:hover .device-mockup {
-            transform: rotate(0deg) scale(1.05);
-        }
-
-
         .product-details {
-            padding: var(--spacing-lg) var(--spacing-lg);
+            padding: var(--spacing-md) var(--spacing-sm) var(--spacing-lg);
             display: flex;
             flex-direction: column;
             gap: var(--spacing-md);
-            overflow-y: auto;
-            max-height: calc(100vh - 80px);
         }
 
         .breadcrumb {
             display: flex;
             gap: var(--spacing-xs);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
         }
 
         .status-badge {
@@ -194,7 +207,6 @@
             border: 1px solid var(--text-tertiary);
             padding: 4px 12px;
             border-radius: var(--radius-pill);
-            margin-bottom: var(--spacing-sm);
             width: fit-content;
         }
 
@@ -212,7 +224,6 @@
             font-weight: 400;
         }
 
-
         .variant-selector {
             margin-top: var(--spacing-sm);
         }
@@ -221,11 +232,13 @@
             display: flex;
             gap: var(--spacing-sm);
             margin-top: var(--spacing-xs);
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .color-swatch {
-            width: 32px;
-            height: 32px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             cursor: pointer;
             border: 2px solid transparent;
@@ -234,14 +247,13 @@
 
         .color-swatch.active {
             border-color: var(--text-primary);
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .tech-specs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
+            gap: var(--spacing-sm);
         }
 
         .spec-item {
@@ -251,26 +263,19 @@
         }
 
         .spec-value {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--text-primary);
             font-weight: 300;
         }
 
-
         .action-area {
-            display: flex;
+            display: none;
             gap: var(--spacing-sm);
             margin-top: var(--spacing-md);
-            position: sticky;
-            bottom: 0;
-            background: var(--bg-color);
-            padding: var(--spacing-md) 0;
-            border-top: 1px solid var(--accent-border);
-            z-index: 10;
         }
 
         .btn {
-            height: 56px;
+            min-height: 56px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -282,6 +287,7 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.2s;
+            border: 1px solid transparent;
         }
 
         .btn-primary {
@@ -291,35 +297,42 @@
             flex: 2;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
             background-color: #e0e0e0;
         }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--text-primary);
-            border: 1px solid var(--text-tertiary);
+            border-color: var(--text-tertiary);
             flex: 1;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
             border-color: var(--text-primary);
         }
 
-
         .info-tabs {
             display: flex;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm);
             border-bottom: 1px solid var(--accent-border);
-            margin-top: var(--spacing-lg);
+            margin-top: var(--spacing-sm);
+            overflow-x: auto;
         }
 
         .tab {
-            padding-bottom: var(--spacing-xs);
+            padding: 0 0 var(--spacing-xs);
             color: var(--text-secondary);
             cursor: pointer;
             border-bottom: 2px solid transparent;
             transition: color 0.2s;
+            white-space: nowrap;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
         }
 
         .tab.active {
@@ -334,140 +347,745 @@
             line-height: 1.6;
         }
 
+        .panel {
+            display: none;
+        }
 
-        @media (max-width: 1024px) {
+        .panel.active {
+            display: block;
+        }
+
+        .trust-bar {
+            background: var(--surface-color);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .trust-item {
+            background: var(--surface-elevated);
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+            display: flex;
+            gap: var(--spacing-xs);
+            align-items: center;
+        }
+
+        .trust-icon {
+            font-size: 1.2rem;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .value-card {
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-md);
+            background: linear-gradient(160deg, #121212, #0a0a0a);
+            padding: var(--spacing-md);
+        }
+
+        .immersive-stack {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+
+        .immersive-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #0d0d0d;
+        }
+
+        .immersive-visual {
+            min-height: 220px;
+            background: linear-gradient(135deg, #1f1f1f, #101010);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+        }
+
+        .immersive-copy {
+            padding: var(--spacing-md);
+        }
+
+        .spec-table-wrapper,
+        .comparison-wrapper {
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            background: var(--surface-color);
+        }
+
+        table {
+            width: 100%;
+            min-width: 560px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 14px var(--spacing-sm);
+            border-bottom: 1px solid var(--accent-border);
+            color: var(--text-secondary);
+        }
+
+        th {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .reviews-summary {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stars {
+            color: var(--accent-warning);
+            letter-spacing: 0.08em;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .review-card {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--accent-border);
+            background: var(--surface-color);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: var(--spacing-xs);
+        }
+
+        .faq-item {
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            min-height: 56px;
+            text-align: left;
+            padding: var(--spacing-sm);
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 var(--spacing-sm) var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            background: radial-gradient(circle at top right, #1d1d1d, #050505 70%);
+            text-align: center;
+        }
+
+        .final-box {
+            max-width: 760px;
+            margin: 0 auto;
+            border: 1px solid var(--accent-border);
+            border-radius: 16px;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: rgba(18, 18, 18, 0.7);
+        }
+
+        .stock-warning {
+            margin-top: var(--spacing-sm);
+            color: #ff8a80;
+            font-weight: 500;
+        }
+
+        .footer {
+            border-top: 1px solid var(--accent-border);
+            background: #030303;
+            padding: var(--spacing-lg) 0 var(--spacing-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .sticky-mobile-cta {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-top: 1px solid var(--accent-border);
+            background: rgba(5, 5, 5, 0.96);
+            backdrop-filter: blur(8px);
+            z-index: 120;
+            display: flex;
+            gap: var(--spacing-xs);
+            align-items: center;
+        }
+
+        .sticky-mobile-cta .btn {
+            flex: 1;
+        }
+
+        .sticky-price {
+            min-width: 92px;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+
+            .header {
+                padding: 0 var(--spacing-md);
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .review-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
             .main-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1.15fr 0.85fr;
+                min-height: 100vh;
             }
 
             .product-stage {
-                height: 50vh;
+                border-right: 1px solid var(--accent-border);
+                border-bottom: 0;
+            }
+
+            .product-stage:hover .device-mockup {
+                transform: rotate(0deg) scale(1.05);
             }
 
             .product-details {
-                max-height: none;
-                overflow: visible;
+                max-height: calc(100vh - 72px);
+                overflow-y: auto;
+                padding: var(--spacing-lg);
             }
 
             .action-area {
-                position: fixed;
+                display: flex;
+                position: sticky;
                 bottom: 0;
-                left: 0;
-                width: 100%;
-                padding: var(--spacing-sm) var(--spacing-md);
-                background: rgba(5, 5, 5, 0.95);
+                background: var(--bg-color);
+                padding-top: var(--spacing-sm);
+                border-top: 1px solid var(--accent-border);
+            }
+
+            .value-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .immersive-card {
+                grid-template-columns: 1fr 1fr;
+                align-items: stretch;
+            }
+
+            .immersive-card:nth-child(even) .immersive-visual {
+                order: 2;
+            }
+
+            .immersive-card:nth-child(even) .immersive-copy {
+                order: 1;
+            }
+
+            .review-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .sticky-mobile-cta {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+
+            .product-stage {
+                min-height: calc(100vh - 72px);
             }
         }
     </style>
 </head>
 
-<body vid="6">
-
-
-    <header class="header" vid="7">
-        <div style="font-weight: 700; letter-spacing: 0.1em;" vid="8">ANKR.</div>
-        <nav class="nav-links" vid="9">
-            <a href="#" class="nav-link" vid="10">PRODUCTS</a>
-            <a href="#" class="nav-link" vid="11">TECHNOLOGY</a>
-            <a href="#" class="nav-link" vid="12">SUPPORT</a>
+<body>
+    <header class="header">
+        <div style="font-weight: 700; letter-spacing: 0.1em;">ANKR.</div>
+        <nav class="nav-links" aria-label="Primary">
+            <a href="#" class="nav-link">PRODUCTS</a>
+            <a href="#" class="nav-link">TECHNOLOGY</a>
+            <a href="#" class="nav-link">SUPPORT</a>
         </nav>
-        <div class="nav-links" vid="13">
-            <a href="#" class="nav-link" vid="14">SEARCH</a>
-            <a href="#" class="nav-link" vid="15">CART (0)</a>
+        <div class="nav-links">
+            <a href="#" class="nav-link">SEARCH</a>
+            <a href="#" class="nav-link">CART <span class="cart-count" data-cart-count>(0)</span></a>
         </div>
     </header>
 
+    <main>
+        <section class="main-grid" id="top">
+            <section class="product-stage" aria-label="Product visual">
+                <div class="device-mockup"></div>
+                <div style="position: absolute; bottom: 32px; left: 32px; opacity: 0.3;">
+                    <div class="text-label">RED DOT AWARD</div>
+                    <div class="text-label" style="margin-top: 4px;">WINNER 2024</div>
+                </div>
+            </section>
 
-    <main class="main-grid" vid="16">
+            <section class="product-details">
+                <div class="breadcrumb text-label">
+                    <span>Power Banks</span> / <span>Series 7</span>
+                </div>
 
+                <div class="status-badge text-label">Best Seller</div>
 
-        <section class="product-stage" vid="17">
-            <div class="device-mockup" vid="18"></div>
+                <h1 class="text-h1">Prime 20K<br>Power Bank</h1>
 
-            <div style="position: absolute; bottom: 32px; left: 32px; opacity: 0.3;" vid="19">
-                <div class="text-label" vid="20">RED DOT AWARD</div>
-                <div class="text-label" style="margin-top: 4px;" vid="21">WINNER 2024</div>
+                <p class="text-body" style="max-width: 80%;">
+                    Ultra-compact 20,000mAh portable charger with 200W total output. Smart digital display and rapid
+                    recharge capability.
+                </p>
+
+                <div class="price-block">
+                    <span class="price">$129.99</span>
+                    <span class="text-label" style="color: var(--accent-success);" data-stock-label>In Stock · 26 left</span>
+                </div>
+
+                <div class="variant-selector">
+                    <div class="text-label">Finish · <span data-variant-name>Graphite Black</span></div>
+                    <div class="variant-options" role="radiogroup" aria-label="Color finish">
+                        <button class="color-swatch active" aria-label="Graphite Black" data-variant="Graphite Black" style="background: #222;"></button>
+                        <button class="color-swatch" aria-label="Arctic Silver" data-variant="Arctic Silver" style="background: #E5E5E5;"></button>
+                        <button class="color-swatch" aria-label="Champagne Gold" data-variant="Champagne Gold" style="background: #D4AF37;"></button>
+                    </div>
+                </div>
+
+                <div class="tech-specs">
+                    <div class="spec-item">
+                        <span class="text-label">Capacity</span>
+                        <span class="spec-value">20,000 mAh</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="text-label">Output</span>
+                        <span class="spec-value">200W Max</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="text-label">Ports</span>
+                        <span class="spec-value">2x USB-C, 1x USB-A</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="text-label">Weight</span>
+                        <span class="spec-value">540g</span>
+                    </div>
+                </div>
+
+                <div class="info-tabs text-label" role="tablist" aria-label="Product information tabs">
+                    <button class="tab active" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+                    <button class="tab" role="tab" aria-selected="false" data-tab="tech">Tech Specs</button>
+                    <button class="tab" role="tab" aria-selected="false" data-tab="reviews">Reviews</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="panel active" data-panel="overview">
+                        <p>Equipped with the latest GaNPrime technology, reducing heat generation while maximizing
+                            efficiency. The smart digital display provides real-time information on remaining battery capacity
+                            and power input/output.</p>
+                        <div class="text-label" style="color: var(--text-tertiary); margin-top: 8px;">
+                            Model: A1336 • Warranty: 24 Months
+                        </div>
+                    </div>
+                    <div class="panel" data-panel="tech">
+                        <p>Input 100W USB-C fast recharge, full recharge in 1h40. Simultaneous charging for phone, laptop
+                            and accessories with intelligent load balancing.</p>
+                    </div>
+                    <div class="panel" data-panel="reviews">
+                        <p>Rated 4.8/5 by 2,184 verified customers. Praised for reliability, compact design and premium
+                            finish.</p>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button class="btn btn-secondary">Save</button>
+                    <button class="btn btn-primary" data-add-to-cart>Add to Cart</button>
+                </div>
+            </section>
+        </section>
+
+        <section class="section trust-bar">
+            <div class="container trust-grid">
+                <article class="trust-item"><span class="trust-icon">🚚</span><span>Livraison gratuite</span></article>
+                <article class="trust-item"><span class="trust-icon">↩️</span><span>Retours 30 jours</span></article>
+                <article class="trust-item"><span class="trust-icon">🛡️</span><span>Garantie 24 mois</span></article>
+                <article class="trust-item"><span class="trust-icon">🔒</span><span>Paiement sécurisé</span></article>
             </div>
         </section>
 
-
-        <section class="product-details" vid="22">
-            <div class="breadcrumb text-label" vid="23">
-                <span vid="24">Power Banks</span> / <span vid="25">Series 7</span>
-            </div>
-
-            <div class="status-badge text-label" vid="26">
-                Best Seller
-            </div>
-
-            <h1 class="text-h1" vid="27">Prime 20K<br vid="28">Power Bank</h1>
-
-            <p class="text-body" style="max-width: 80%;" vid="29">
-                Ultra-compact 20,000mAh portable charger with 200W total output. Smart digital display and rapid
-                recharge capability.
-            </p>
-
-            <div class="price-block" vid="30">
-                <span class="price" vid="31">$129.99</span>
-                <span class="text-label" style="color: #4CAF50;" vid="32">In Stock</span>
-            </div>
-
-
-            <div class="variant-selector" vid="33">
-                <div class="text-label" vid="34">Finish</div>
-                <div class="variant-options" vid="35">
-                    <div class="color-swatch active" style="background: #222;" vid="36"></div>
-                    <div class="color-swatch" style="background: #E5E5E5;" vid="37"></div>
-                    <div class="color-swatch" style="background: #D4AF37;" vid="38"></div>
+        <section class="section">
+            <div class="container">
+                <p class="text-label">Why Prime 20K</p>
+                <h2 class="text-h2">Pensée pour la conversion et la vraie vie.</h2>
+                <div class="value-grid">
+                    <article class="value-card">
+                        <h3>Recharge ultra rapide</h3>
+                        <p class="text-body">Jusqu'à 200W pour alimenter smartphone, tablette et laptop simultanément.</p>
+                    </article>
+                    <article class="value-card">
+                        <h3>Haute capacité</h3>
+                        <p class="text-body">20,000mAh pour plusieurs jours d'autonomie sans prise électrique.</p>
+                    </article>
+                    <article class="value-card">
+                        <h3>Design compact</h3>
+                        <p class="text-body">Format premium facile à glisser dans une sacoche ou un sac de voyage.</p>
+                    </article>
+                    <article class="value-card">
+                        <h3>Compatibilité universelle</h3>
+                        <p class="text-body">USB-C PD + USB-A, compatible iPhone, Android, Switch, MacBook et plus.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-
-            <div class="tech-specs" vid="39">
-                <div class="spec-item" vid="40">
-                    <span class="text-label" vid="41">Capacity</span>
-                    <span class="spec-value" vid="42">20,000 mAh</span>
-                </div>
-                <div class="spec-item" vid="43">
-                    <span class="text-label" vid="44">Output</span>
-                    <span class="spec-value" vid="45">200W Max</span>
-                </div>
-                <div class="spec-item" vid="46">
-                    <span class="text-label" vid="47">Ports</span>
-                    <span class="spec-value" vid="48">2x USB-C, 1x USB-A</span>
-                </div>
-                <div class="spec-item" vid="49">
-                    <span class="text-label" vid="50">Weight</span>
-                    <span class="spec-value" vid="51">540g</span>
+        <section class="section">
+            <div class="container">
+                <p class="text-label">Usage Stories</p>
+                <h2 class="text-h2">Une batterie externe qui suit tous vos rythmes.</h2>
+                <div class="immersive-stack">
+                    <article class="immersive-card">
+                        <div class="immersive-visual" aria-hidden="true">✈️</div>
+                        <div class="immersive-copy">
+                            <h3>Voyage longue distance</h3>
+                            <p class="text-body">Restez chargé durant vols, correspondances et trajets sans chercher de prise.</p>
+                        </div>
+                    </article>
+                    <article class="immersive-card">
+                        <div class="immersive-visual" aria-hidden="true">💻</div>
+                        <div class="immersive-copy">
+                            <h3>Travail nomade</h3>
+                            <p class="text-body">Votre bureau mobile reste actif toute la journée, même en coworking complet.</p>
+                        </div>
+                    </article>
+                    <article class="immersive-card">
+                        <div class="immersive-visual" aria-hidden="true">🎮</div>
+                        <div class="immersive-copy">
+                            <h3>Gaming mobile</h3>
+                            <p class="text-body">Alimentez vos sessions intensives sans perte de performance ni chauffe excessive.</p>
+                        </div>
+                    </article>
+                    <article class="immersive-card">
+                        <div class="immersive-visual" aria-hidden="true">🚨</div>
+                        <div class="immersive-copy">
+                            <h3>Urgence batterie</h3>
+                            <p class="text-body">Un niveau critique ? 15 minutes suffisent pour récupérer plusieurs heures d'usage.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-
-            <div class="info-tabs text-label" vid="52">
-                <div class="tab active" vid="53">Overview</div>
-                <div class="tab" vid="54">Tech Specs</div>
-                <div class="tab" vid="55">Reviews</div>
-            </div>
-
-            <div class="tab-content" vid="56">
-                <p vid="57">Equipped with the latest GaNPrime technology, reducing heat generation while maximizing
-                    efficiency. The smart digital display provides real-time information on remaining battery capacity
-                    and power input/output.</p>
-                <br vid="58">
-                <div class="text-label" style="color: var(--text-tertiary); margin-top: 8px;" vid="59">
-                    Model: A1336 • Warranty: 24 Months
+        <section class="section" id="specs">
+            <div class="container">
+                <p class="text-label">Tech Specifications</p>
+                <h2 class="text-h2">Fiche technique complète.</h2>
+                <div class="spec-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Caractéristique</th>
+                                <th>Détails</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Capacité</td><td>20,000mAh (74Wh)</td></tr>
+                            <tr><td>Puissance max</td><td>200W Total Output</td></tr>
+                            <tr><td>Ports</td><td>2x USB-C PD 3.1, 1x USB-A</td></tr>
+                            <tr><td>Dimensions</td><td>154 × 54 × 49 mm</td></tr>
+                            <tr><td>Poids</td><td>540g</td></tr>
+                            <tr><td>Certifications</td><td>CE, FCC, RoHS, UN38.3</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </section>
 
+        <section class="section" id="reviews">
+            <div class="container">
+                <div class="reviews-summary">
+                    <p class="text-label">Social Proof</p>
+                    <h2 class="text-h2">4.8/5 basé sur 2,184 avis.</h2>
+                    <p class="stars" aria-label="Five stars">★★★★★</p>
+                </div>
+                <div class="review-grid">
+                    <article class="review-card">
+                        <p class="stars">★★★★★</p>
+                        <p>"La seule power bank qui charge mon laptop aussi vite que son chargeur d'origine."</p>
+                        <p class="text-label" style="margin-top: 12px;">Nora, Paris</p>
+                    </article>
+                    <article class="review-card">
+                        <p class="stars">★★★★★</p>
+                        <p>"Je l'utilise en déplacement pro depuis 2 mois, autonomie incroyable et finition premium."</p>
+                        <p class="text-label" style="margin-top: 12px;">Mehdi, Lyon</p>
+                    </article>
+                    <article class="review-card">
+                        <p class="stars">★★★★☆</p>
+                        <p>"Super compacte pour la capacité. Le display numérique est ultra pratique au quotidien."</p>
+                        <p class="text-label" style="margin-top: 12px;">Camille, Bruxelles</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            <div class="action-area" vid="60">
-                <button class="btn btn-secondary" vid="61">Save</button>
-                <button class="btn btn-primary" vid="62">Add to Cart</button>
+        <section class="section">
+            <div class="container">
+                <p class="text-label">Comparison</p>
+                <h2 class="text-h2">Power Bank premium vs chargeur classique.</h2>
+                <div class="comparison-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Critère</th>
+                                <th>Prime 20K Power Bank</th>
+                                <th>Chargeur classique</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mobilité</td><td>Utilisable partout</td><td>Nécessite prise murale</td></tr>
+                            <tr><td>Multi-appareils</td><td>Jusqu'à 3 appareils</td><td>Souvent 1 appareil</td></tr>
+                            <tr><td>Puissance</td><td>Jusqu'à 200W</td><td>20W à 65W moyen</td></tr>
+                            <tr><td>Secours urgence</td><td>Oui, batterie intégrée</td><td>Non</td></tr>
+                            <tr><td>Voyage avion</td><td>Oui, conforme cabine</td><td>Oui</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container">
+                <p class="text-label">FAQ</p>
+                <h2 class="text-h2">Questions fréquentes.</h2>
+                <div class="faq-list">
+                    <article class="faq-item open">
+                        <button class="faq-question" aria-expanded="true">Combien de temps pour recharger la batterie ? <span>+</span></button>
+                        <div class="faq-answer">En USB-C 100W, la recharge complète prend environ 1h40.</div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Est-elle compatible avec iPhone et Android ? <span>+</span></button>
+                        <div class="faq-answer">Oui, elle supporte les principaux protocoles PD/QC pour iPhone, Samsung, Pixel et plus.</div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Autorisé en avion ? <span>+</span></button>
+                        <div class="faq-answer">Oui, la capacité 74Wh est conforme aux restrictions cabine habituelles.</div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Quelle garantie est incluse ? <span>+</span></button>
+                        <div class="faq-answer">Garantie constructeur 24 mois avec remplacement express en cas de défaut.</div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Délais de livraison ? <span>+</span></button>
+                        <div class="faq-answer">Expédition sous 24h. Livraison standard offerte en 2 à 4 jours ouvrés.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section final-cta">
+            <div class="container">
+                <div class="final-box">
+                    <p class="text-label">Ready to upgrade</p>
+                    <h2 class="text-h2">Prime 20K Power Bank à 129.99$</h2>
+                    <p class="text-body">Recharge ultra rapide, autonomie massive, design premium et garantie 24 mois.</p>
+                    <p class="stock-warning" data-stock-warning>⚠ Stock limité : plus que 26 unités.</p>
+                    <div style="margin-top: 20px; display: flex; justify-content: center;">
+                        <button class="btn btn-primary" data-add-to-cart style="min-width: 260px;">Add to Cart</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <p class="text-label">Support</p>
+                <a href="#">Centre d'aide</a>
+            </div>
+            <div>
+                <p class="text-label">Livraison</p>
+                <a href="#">Suivi de commande</a>
+            </div>
+            <div>
+                <p class="text-label">Retours</p>
+                <a href="#">Politique de retour</a>
+            </div>
+            <div>
+                <p class="text-label">Contact</p>
+                <a href="mailto:support@ankr.example">support@ankr.example</a>
+            </div>
+            <div>
+                <p class="text-label">Réseaux</p>
+                <a href="#">Instagram · X · YouTube</a>
+            </div>
+            <div>
+                <p class="text-label">Légal</p>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
 
+    <div class="sticky-mobile-cta" aria-label="Sticky mobile call to action">
+        <div class="sticky-price">
+            <div class="text-label">Prime 20K</div>
+            <div class="price" style="font-size: 1.2rem;">$129.99</div>
+        </div>
+        <button class="btn btn-primary" data-add-to-cart>Add to Cart</button>
+    </div>
+
+    <script>
+        const cartCountNodes = document.querySelectorAll('[data-cart-count]');
+        const addToCartButtons = document.querySelectorAll('[data-add-to-cart]');
+        const stockLabel = document.querySelector('[data-stock-label]');
+        const stockWarning = document.querySelector('[data-stock-warning]');
+        const variantName = document.querySelector('[data-variant-name]');
+        const swatches = document.querySelectorAll('.color-swatch');
+        const tabs = document.querySelectorAll('.tab');
+        const panels = document.querySelectorAll('.panel');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        let cartCount = 0;
+        let stock = 26;
+
+        function updateCartDisplay() {
+            cartCountNodes.forEach((node) => {
+                node.textContent = `(${cartCount})`;
+            });
+
+            const safeStock = Math.max(stock, 0);
+            if (stockLabel) {
+                stockLabel.textContent = `In Stock · ${safeStock} left`;
+            }
+            if (stockWarning) {
+                stockWarning.textContent = `⚠ Stock limité : plus que ${safeStock} unités.`;
+            }
+        }
+
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                cartCount += 1;
+                stock -= 1;
+                updateCartDisplay();
+            });
+        });
+
+        swatches.forEach((swatch) => {
+            swatch.addEventListener('click', () => {
+                swatches.forEach((item) => item.classList.remove('active'));
+                swatch.classList.add('active');
+                if (variantName) {
+                    variantName.textContent = swatch.dataset.variant || 'Selected finish';
+                }
+            });
+        });
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.dataset.tab;
+                tabs.forEach((item) => {
+                    item.classList.remove('active');
+                    item.setAttribute('aria-selected', 'false');
+                });
+                panels.forEach((panel) => panel.classList.remove('active'));
+
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                const targetPanel = document.querySelector(`[data-panel="${tabName}"]`);
+                if (targetPanel) targetPanel.classList.add('active');
+            });
+        });
+
+        faqItems.forEach((item) => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                faqItems.forEach((entry) => {
+                    entry.classList.remove('open');
+                    entry.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        updateCartDisplay();
+    </script>
 </body>
 
 </html>
