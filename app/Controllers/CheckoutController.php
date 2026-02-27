@@ -20,9 +20,7 @@ class CheckoutController extends Controller
             'quantity' => (string) $quantity,
             'variant' => (string) ($cart['variant'] ?? 'Midnight Black'),
             'subtotal' => number_format($quantity * $price, 2),
-            'pageStyles' => '<link rel="stylesheet" href="/assets/css/checkout.css">',
             'pageScripts' => '<script src="/assets/js/checkout.js" defer></script>',
-            'mainClass' => 'checkout-shell',
         ]);
     }
 }

@@ -1,32 +1,28 @@
-<section class="flow-header">
-    <a href="/product" class="flow-back">← Continue Shopping</a>
-    <a href="/cart" class="flow-cart">CART ({{cartCount}})</a>
-</section>
+<section class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="mb-6 flex items-center justify-between text-sm">
+        <a href="/product" class="text-zinc-400 hover:text-white">← Continue Shopping</a>
+        <a href="/cart" class="text-zinc-300">CART ({{cartCount}})</a>
+    </div>
 
-<section class="flow-card">
-    <h1>Your Cart</h1>
-    <div class="line-item">
-        <h2>{{productName}}</h2>
-        <p>Variante: {{variant}}</p>
-        <p>Prix unitaire: ${{price}}</p>
+    <div class="rounded-3xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+        <h1 class="mb-6 text-3xl font-semibold">Your Cart</h1>
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+            <h2 class="text-xl font-medium">{{productName}}</h2>
+            <p class="mt-1 text-zinc-400">Variante: {{variant}}</p>
+            <p class="text-zinc-400">Prix unitaire: ${{price}}</p>
 
-        <div class="qty-control" aria-label="Modifier la quantité">
-            <form action="/cart/update" method="post">
-                <input type="hidden" name="direction" value="dec">
-                <button type="submit" aria-label="Diminuer">−</button>
-            </form>
-            <span>{{quantity}}</span>
-            <form action="/cart/update" method="post">
-                <input type="hidden" name="direction" value="inc">
-                <button type="submit" aria-label="Augmenter">+</button>
-            </form>
+            <div class="mt-4 flex items-center gap-3" aria-label="Modifier la quantité">
+                <form action="/cart/update" method="post"><input type="hidden" name="direction" value="dec"><button class="h-9 w-9 rounded-full border border-zinc-700" type="submit" aria-label="Diminuer">−</button></form>
+                <span class="min-w-8 text-center">{{quantity}}</span>
+                <form action="/cart/update" method="post"><input type="hidden" name="direction" value="inc"><button class="h-9 w-9 rounded-full border border-zinc-700" type="submit" aria-label="Augmenter">+</button></form>
+            </div>
         </div>
-    </div>
 
-    <div class="summary-row">
-        <span>Sous-total</span>
-        <strong>${{subtotal}}</strong>
-    </div>
+        <div class="mt-6 flex items-center justify-between border-t border-zinc-800 pt-4">
+            <span class="text-zinc-400">Sous-total</span>
+            <strong class="text-2xl">${{subtotal}}</strong>
+        </div>
 
-    <a href="/checkout" class="btn-primary-flow">Proceed to Checkout</a>
+        <a href="/checkout" class="mt-6 inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 hover:bg-zinc-200">Proceed to Checkout</a>
+    </div>
 </section>

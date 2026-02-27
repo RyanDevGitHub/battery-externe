@@ -31,8 +31,6 @@ class CartController extends Controller
             'quantity' => (string) $quantity,
             'price' => number_format($price, 2),
             'subtotal' => number_format($subtotal, 2),
-            'pageStyles' => '<link rel="stylesheet" href="/assets/css/cart.css">',
-            'mainClass' => 'checkout-shell',
         ]);
     }
 
