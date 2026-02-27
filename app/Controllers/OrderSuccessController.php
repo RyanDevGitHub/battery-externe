@@ -15,8 +15,6 @@ class OrderSuccessController extends Controller
         $this->render('order-success', [
             'pageTitle' => 'Order Success',
             'orderNumber' => $orderNumber,
-            'pageStyles' => '<link rel="stylesheet" href="/assets/css/checkout.css">',
-            'mainClass' => 'checkout-shell',
         ]);
     }
 }

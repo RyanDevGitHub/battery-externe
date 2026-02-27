@@ -1,174 +1,71 @@
-<header class="header">
-    <div class="brand-mark">ANKR.</div>
-    <nav class="nav-links" aria-label="Navigation principale">
-        <a href="/product" class="nav-link">PRODUCTS</a>
-        <a href="#tech-specs" class="nav-link">TECHNOLOGY</a>
-        <a href="#faq" class="nav-link">SUPPORT</a>
-    </nav>
-    <div class="nav-links nav-actions">
-        <a href="#" class="nav-link" aria-label="Search">SEARCH</a>
-        <a href="/cart" class="nav-link">CART (<span data-cart-count>{{cartCount}}</span>)</a>
+<header class="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div class="text-sm font-semibold tracking-[0.2em] text-zinc-200">ANKR.</div>
+        <nav class="hidden gap-6 text-xs tracking-widest text-zinc-400 md:flex">
+            <a href="/product" class="hover:text-white">PRODUCTS</a>
+            <a href="#tech-specs" class="hover:text-white">TECHNOLOGY</a>
+            <a href="#faq" class="hover:text-white">SUPPORT</a>
+        </nav>
+        <a href="/cart" class="text-sm text-zinc-300 hover:text-white">CART (<span data-cart-count>{{cartCount}}</span>)</a>
     </div>
 </header>
 
-<section class="main-grid" aria-label="Produit principal">
-    <section class="product-stage">
-        <div class="device-mockup" aria-hidden="true"></div>
-        <div class="award-block">
-            <div class="text-label">RED DOT AWARD</div>
-            <div class="text-label award-sub">WINNER 2024</div>
-        </div>
-    </section>
+<section class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
+    <div class="rounded-3xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-black p-8">
+        <img src="/assets/mockup.jpg" alt="Prime 20K Power Bank" class="mx-auto h-[420px] w-full rounded-2xl object-cover">
+    </div>
 
-    <section class="product-details">
-        <div class="breadcrumb text-label">
-            <span>Power Banks</span> / <span>Series 7</span>
-        </div>
-
-        <div class="status-badge text-label">Best Seller</div>
-
-        <h1 class="text-h1">Prime 20K<br>Power Bank</h1>
-
-        <p class="text-body product-description">
-            Ultra-compact 20,000mAh portable charger with 200W total output. Smart digital display and rapid
-            recharge capability.
-        </p>
-
-        <div class="price-block">
-            <span class="price">$129.99</span>
-            <span class="text-label stock-label">In Stock</span>
+    <div class="space-y-6">
+        <p class="text-xs uppercase tracking-[0.3em] text-zinc-400">Power Banks / Series 7</p>
+        <span class="inline-flex rounded-full border border-zinc-700 px-4 py-1 text-xs uppercase tracking-widest text-zinc-300">Best Seller</span>
+        <h1 class="text-4xl font-semibold leading-tight">Prime 20K<br>Power Bank</h1>
+        <p class="text-zinc-300">Batterie externe premium 20,000mAh avec charge ultra rapide 200W pour smartphone, tablette et ordinateur portable.</p>
+        <div class="flex items-end gap-3 border-b border-zinc-800 pb-6">
+            <p class="text-4xl font-semibold">$129.99</p>
+            <p class="text-zinc-500 line-through">$159.99</p>
         </div>
 
-        <div class="variant-selector">
-            <div class="text-label">Finish</div>
-            <div class="variant-options" role="radiogroup" aria-label="Choisir une finition">
-                <button type="button" class="color-swatch active" style="background: #222;" aria-pressed="true" data-variant="Midnight Black"></button>
-                <button type="button" class="color-swatch" style="background: #E5E5E5;" aria-pressed="false" data-variant="Arctic Silver"></button>
-                <button type="button" class="color-swatch" style="background: #D4AF37;" aria-pressed="false" data-variant="Gold Edition"></button>
-            </div>
-            <p class="text-label selected-variant">Selected: <span data-selected-variant>Midnight Black</span></p>
-        </div>
-
-        <div class="tech-specs">
-            <div class="spec-item">
-                <span class="text-label">Capacity</span>
-                <span class="spec-value">20,000 mAh</span>
-            </div>
-            <div class="spec-item">
-                <span class="text-label">Output</span>
-                <span class="spec-value">200W Max</span>
-            </div>
-            <div class="spec-item">
-                <span class="text-label">Ports</span>
-                <span class="spec-value">2x USB-C, 1x USB-A</span>
-            </div>
-            <div class="spec-item">
-                <span class="text-label">Weight</span>
-                <span class="spec-value">540g</span>
+        <div>
+            <p class="mb-3 text-sm text-zinc-400">Couleur: <span data-selected-variant class="text-zinc-200">Midnight Black</span></p>
+            <div class="flex gap-3">
+                <button type="button" class="color-swatch active h-9 w-9 rounded-full border-2 border-white bg-zinc-900" aria-pressed="true" data-variant="Midnight Black"></button>
+                <button type="button" class="color-swatch h-9 w-9 rounded-full border border-zinc-500 bg-slate-300" aria-pressed="false" data-variant="Arctic Silver"></button>
+                <button type="button" class="color-swatch h-9 w-9 rounded-full border border-zinc-500 bg-blue-500" aria-pressed="false" data-variant="Ocean Blue"></button>
             </div>
         </div>
 
-        <div class="info-tabs text-label" role="tablist" aria-label="Informations produit">
-            <button class="tab active" type="button">Overview</button>
-            <button class="tab" type="button">Tech Specs</button>
-            <button class="tab" type="button">Reviews</button>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+            <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-4"><p class="text-zinc-400">Capacité</p><p class="mt-1 text-xl">20,000mAh</p></article>
+            <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-4"><p class="text-zinc-400">Puissance</p><p class="mt-1 text-xl">200W</p></article>
+            <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-4"><p class="text-zinc-400">Sorties</p><p class="mt-1 text-xl">USB-C x2</p></article>
+            <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-4"><p class="text-zinc-400">Garantie</p><p class="mt-1 text-xl">24 mois</p></article>
         </div>
 
-        <div class="tab-content">
-            <p>Equipped with the latest GaNPrime technology, reducing heat generation while maximizing efficiency. The smart digital display provides real-time information on remaining battery capacity and power input/output.</p>
-            <div class="text-label meta-line">Model: A1336 • Warranty: 24 Months</div>
-        </div>
-
-        <div class="action-area">
-            <button class="btn btn-secondary" type="button">Save</button>
-            <form action="/cart/add" method="post" class="add-form">
-                <input type="hidden" name="redirect" value="/product">
-                <input type="hidden" name="variant" value="Midnight Black" data-variant-input>
-                <button class="btn btn-primary" type="submit">Add to Cart</button>
-            </form>
-        </div>
-    </section>
-</section>
-
-<section class="section trust-bar" aria-label="Réassurance">
-    <article><h2>Livraison express</h2><p>Expédition 24h en Europe.</p></article>
-    <article><h2>Retours 30 jours</h2><p>Retour simple et sans frais.</p></article>
-    <article><h2>Garantie 24 mois</h2><p>Couverture constructeur officielle.</p></article>
-    <article><h2>Paiement sécurisé</h2><p>Module de paiement bientôt disponible.</p></article>
-</section>
-
-<section class="section value-props" aria-label="Bénéfices principaux">
-    <h2 class="section-title">Pourquoi Prime 20K</h2>
-    <div class="value-grid">
-        <article><h3>Recharge ultra-rapide</h3><p>Jusqu’à 200W cumulés pour vos appareils.</p></article>
-        <article><h3>Écran intelligent</h3><p>Suivi précis du niveau, de la tension et de la puissance.</p></article>
-        <article><h3>Format compact</h3><p>Design premium facilement transportable au quotidien.</p></article>
-        <article><h3>Sécurité thermique</h3><p>Gestion avancée de la température en charge intense.</p></article>
+        <form action="/cart/add" method="post" class="add-form">
+            <input type="hidden" name="redirect" value="/cart">
+            <input type="hidden" name="variant" value="Midnight Black" data-variant-input>
+            <button class="w-full rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200" type="submit">Add to Cart</button>
+        </form>
     </div>
 </section>
 
-<section class="section story" aria-label="Storytelling bénéfices">
-    <article class="story-item">
-        <div><h2>Pour les déplacements intensifs</h2><p>Conçue pour tenir toute la journée entre rendez-vous, voyages et sessions de travail.</p></div>
-        <div class="story-card">20K mAh</div>
-    </article>
-    <article class="story-item reverse">
-        <div><h2>Puissance pro partout</h2><p>Alimente laptop, smartphone et accessoires sans compromis sur la vitesse.</p></div>
-        <div class="story-card">200W</div>
-    </article>
-</section>
-
-<section id="tech-specs" class="section">
-    <h2 class="section-title">Tech specs complètes</h2>
-    <div class="spec-table-wrap">
-        <table class="spec-table">
-            <tbody>
-                <tr><th>Capacité</th><td>20,000 mAh / 72Wh</td></tr>
-                <tr><th>Entrée USB-C</th><td>5V⎓3A, 9V⎓3A, 15V⎓3A, 20V⎓5A</td></tr>
-                <tr><th>Sortie USB-C1</th><td>Jusqu’à 140W</td></tr>
-                <tr><th>Sortie USB-C2</th><td>Jusqu’à 100W</td></tr>
-                <tr><th>Sortie USB-A</th><td>Jusqu’à 22.5W</td></tr>
-                <tr><th>Dimensions</th><td>127 x 55 x 49 mm</td></tr>
-                <tr><th>Poids</th><td>540 g</td></tr>
+<section id="tech-specs" class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <h2 class="mb-4 text-2xl font-semibold">Tech specs complètes</h2>
+    <div class="overflow-hidden rounded-2xl border border-zinc-800">
+        <table class="w-full text-left text-sm">
+            <tbody class="divide-y divide-zinc-800">
+                <tr><th class="bg-zinc-900 px-4 py-3 font-medium">Capacité</th><td class="px-4 py-3 text-zinc-300">20,000 mAh / 72Wh</td></tr>
+                <tr><th class="bg-zinc-900 px-4 py-3 font-medium">Entrée USB-C</th><td class="px-4 py-3 text-zinc-300">5V⎓3A, 9V⎓3A, 15V⎓3A, 20V⎓5A</td></tr>
+                <tr><th class="bg-zinc-900 px-4 py-3 font-medium">Sortie USB-C1</th><td class="px-4 py-3 text-zinc-300">Jusqu’à 140W</td></tr>
             </tbody>
         </table>
     </div>
 </section>
 
-<section class="section reviews" aria-label="Avis clients">
-    <h2 class="section-title">Avis clients</h2>
-    <p class="rating">4.8/5 basé sur 312 avis</p>
-    <div class="review-list">
-        <article><h3>Emma R.</h3><p>“La meilleure batterie externe que j’ai utilisée pour mon MacBook.”</p></article>
-        <article><h3>Lucas T.</h3><p>“Finitions impeccables et puissance réelle au rendez-vous.”</p></article>
-        <article><h3>Nina M.</h3><p>“Je pars en week-end sans chargeur mural, elle suffit largement.”</p></article>
+<section id="faq" class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <h2 class="mb-4 text-2xl font-semibold">FAQ</h2>
+    <div class="space-y-3">
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4"><p class="font-medium">Combien de temps pour recharger la batterie ?</p><p class="mt-2 text-zinc-300">Environ 1h15 avec un chargeur USB-C 140W compatible.</p></div>
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4"><p class="font-medium">Puis-je charger un ordinateur portable ?</p><p class="mt-2 text-zinc-300">Oui, la sortie USB-C1 supporte jusqu’à 140W.</p></div>
     </div>
-</section>
-
-<section id="faq" class="section faq" aria-label="FAQ">
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq-list">
-        <details>
-            <summary>Combien de temps pour recharger la batterie ?</summary>
-            <p>Environ 1h15 avec un chargeur USB-C 140W compatible.</p>
-        </details>
-        <details>
-            <summary>Puis-je charger un ordinateur portable ?</summary>
-            <p>Oui, la sortie USB-C1 supporte jusqu’à 140W selon l’appareil.</p>
-        </details>
-        <details>
-            <summary>La batterie est-elle autorisée en avion ?</summary>
-            <p>Oui, avec ses 72Wh, elle est conforme à la majorité des réglementations cabine.</p>
-        </details>
-    </div>
-</section>
-
-<section class="section final-cta" aria-label="Call to action final">
-    <h2>Prêt à upgrader votre autonomie&nbsp;?</h2>
-    <p>Prime 20K • 200W • Garantie 24 mois • Livraison express</p>
-    <form action="/cart/add" method="post" class="add-form cta-form">
-        <input type="hidden" name="redirect" value="/cart">
-        <input type="hidden" name="variant" value="Midnight Black" data-variant-input>
-        <button class="btn btn-primary" type="submit">Add to Cart</button>
-    </form>
 </section>

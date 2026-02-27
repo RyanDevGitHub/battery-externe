@@ -15,9 +15,7 @@ class ProductController extends Controller
         $this->render('product', [
             'pageTitle' => 'Prime 20K Power Bank',
             'cartCount' => (string) $cartCount,
-            'pageStyles' => '<link rel="stylesheet" href="/assets/css/product.css">',
             'pageScripts' => '<script src="/assets/js/product.js" defer></script>',
-            'mainClass' => 'page-shell',
         ]);
     }
 }
