@@ -1,0 +1,32 @@
+<section class="flow-header">
+    <a href="/product" class="flow-back">← Continue Shopping</a>
+    <a href="/cart" class="flow-cart">CART ({{cartCount}})</a>
+</section>
+
+<section class="flow-card">
+    <h1>Your Cart</h1>
+    <div class="line-item">
+        <h2>{{productName}}</h2>
+        <p>Variante: {{variant}}</p>
+        <p>Prix unitaire: ${{price}}</p>
+
+        <div class="qty-control" aria-label="Modifier la quantité">
+            <form action="/cart/update" method="post">
+                <input type="hidden" name="direction" value="dec">
+                <button type="submit" aria-label="Diminuer">−</button>
+            </form>
+            <span>{{quantity}}</span>
+            <form action="/cart/update" method="post">
+                <input type="hidden" name="direction" value="inc">
+                <button type="submit" aria-label="Augmenter">+</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="summary-row">
+        <span>Sous-total</span>
+        <strong>${{subtotal}}</strong>
+    </div>
+
+    <a href="/checkout" class="btn-primary-flow">Proceed to Checkout</a>
+</section>

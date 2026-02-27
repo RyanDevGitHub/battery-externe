@@ -1,0 +1,15 @@
+@import url('/assets/css/cart.css');
+.checkout-grid { display: grid; gap: 14px; }
+.checkout-form label { display: block; margin-top: 10px; margin-bottom: 6px; }
+.checkout-form input { width: 100%; min-height: 44px; border: 1px solid #333; border-radius: 8px; background: #0b0b0b; color: #fff; padding: 10px; }
+.split { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.confirm-message { margin-top: 10px; color: #7ee787; min-height: 24px; }
+#success-link { display: none; }
+.success-card { max-width: 680px; margin: 80px auto; text-align: center; }
+
+@media (min-width: 768px) {
+    .split { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+    .checkout-grid { grid-template-columns: 1.4fr 1fr; align-items: start; }
+}

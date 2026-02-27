@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{pageTitle}} - Projet MVC</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    {{pageStyles}}
 </head>
 <body>
-    <main class="container">
+    <main class="{{mainClass}}">
         {{content}}
     </main>
 
     <script src="/assets/js/app.js"></script>
+    {{pageScripts}}
 </body>
 </html>

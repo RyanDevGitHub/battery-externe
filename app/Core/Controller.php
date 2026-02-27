@@ -18,6 +18,15 @@ abstract class Controller
     {
         $viewsPath = __DIR__ . '/../Views/';
 
+        $defaults = [
+            'pageTitle' => 'Projet MVC',
+            'pageStyles' => '',
+            'pageScripts' => '',
+            'mainClass' => 'container',
+        ];
+
+        $data = array_merge($defaults, $data);
+
         $viewContent = file_get_contents($viewsPath . $view . '.html') ?: '';
         $layoutContent = file_get_contents($viewsPath . 'layout.html') ?: '';
 
