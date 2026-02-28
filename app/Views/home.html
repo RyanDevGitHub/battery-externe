@@ -1,112 +1,156 @@
-<header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur">
-    <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#top" class="flex items-center gap-3">
-            <img src="/assets/logo.png" alt="PowerBank Store" class="h-9 w-9 rounded-full border border-zinc-700 object-cover">
-            <span class="text-sm font-semibold tracking-[0.2em] text-zinc-300">POWERBANK STORE</span>
-        </a>
-        <nav class="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
-            <a href="#comparatif" class="transition hover:text-white">Comparatif</a>
-            <a href="#comment-marche" class="transition hover:text-white">Comment ça marche</a>
-            <a href="#faq" class="transition hover:text-white">FAQ</a>
-        </nav>
-        <a class="rounded-full bg-white px-5 py-2 text-xs font-semibold tracking-wider text-zinc-950 transition hover:bg-zinc-200" href="#buy">ACHETER MA BATTERY</a>
-    </div>
-</header>
+<div class="min-h-screen bg-[#e7e7e7] text-black">
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            width: max-content;
+            animation: marquee 18s linear infinite;
+        }
+    </style>
 
-<section id="top" class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
-    <div class="space-y-6 self-center">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-400">Powerbank Store</p>
-        <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Ne tombez plus jamais à 1%</h1>
-        <p class="max-w-xl text-zinc-300">La battery portable pensée pour vos journées chargées : compacte, puissante et prête à recharger tous vos appareils en quelques minutes.</p>
-        <a class="inline-flex rounded-full bg-white px-7 py-3 text-sm font-semibold tracking-wide text-zinc-950 transition hover:bg-zinc-200" href="#buy">ACHETER MA BATTERY</a>
-    </div>
-    <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 p-4">
-        <img src="/assets/mockup.jpg" alt="Batteries portables Powerbank Store" class="h-full w-full rounded-2xl object-cover">
-    </div>
-</section>
-
-<section id="comparatif" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-    <h2 class="mb-10 text-center text-3xl font-semibold">Comparatif</h2>
-    <div class="grid items-stretch gap-4 rounded-3xl border border-zinc-800 bg-zinc-900/60 p-4 md:grid-cols-[1fr_auto_1fr] md:p-8">
-        <article class="rounded-2xl border border-zinc-700 bg-zinc-950/80 p-6">
-            <h3 class="mb-4 text-lg font-semibold">Battery PowerBank Store</h3>
-            <p class="mb-2">10000mAh</p><p class="mb-2">4 cycles de charge</p><p class="mb-2">Format compact</p><p>Livraison 4 jours</p>
-        </article>
-        <ul class="flex flex-col justify-center gap-2 px-4 text-center text-zinc-400">
-            <li>Autonomie</li><li>Puissance</li><li>Taille</li><li>Poids</li><li>Prix</li>
-        </ul>
-        <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-zinc-400">
-            <h3 class="mb-4 text-lg font-semibold text-zinc-200">Battery classique</h3>
-            <p class="mb-2">5000mAh</p><p class="mb-2">1 cycle de charge</p><p class="mb-2">Format imposant</p><p>Livraison variable</p>
-        </article>
-    </div>
-</section>
-
-<section class="mx-auto w-full max-w-5xl px-4 py-8 text-center sm:px-6 lg:px-8">
-    <h2 class="text-2xl font-semibold sm:text-4xl">Ne plus avoir de battery est pour eux un lointain souvenir</h2>
-</section>
-
-<section class="mx-auto grid w-full max-w-7xl gap-5 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
-    <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6"><h3 class="mb-3 text-sm tracking-[0.2em] text-zinc-400">OUTSIDE NOISE</h3><p class="mb-3 text-zinc-200">Je ne sors plus sans elle, charge rapide et super légère.</p><span class="text-sm text-zinc-500">— Clara</span></article>
-    <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6"><h3 class="mb-3 text-sm tracking-[0.2em] text-zinc-400">OUTSIDE NOISE</h3><p class="mb-3 text-zinc-200">Mon iphone tient toute la journée même avec GPS et vidéo.</p><span class="text-sm text-zinc-500">— Julien</span></article>
-    <article class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6"><h3 class="mb-3 text-sm tracking-[0.2em] text-zinc-400">OUTSIDE NOISE</h3><p class="mb-3 text-zinc-200">Qualité premium, je recommande pour les déplacements.</p><span class="text-sm text-zinc-500">— Sarah</span></article>
-</section>
-
-<section class="mx-auto grid w-full max-w-7xl gap-5 px-4 py-10 sm:px-6 md:grid-cols-2 lg:px-8">
-    <article class="rounded-3xl border border-zinc-800 bg-zinc-900 p-8"><h3 class="mb-3 text-2xl font-semibold">Ultra compacte</h3><p class="text-zinc-300">Une battery fine qui se glisse dans une poche tout en offrant une autonomie longue durée pour votre quotidien.</p></article>
-    <article class="rounded-3xl border border-zinc-800 bg-zinc-900 p-8"><h3 class="mb-3 text-2xl font-semibold">Charge rapide</h3><p class="text-zinc-300">Recharge vos appareils et la battery elle-même en un temps record grâce à la technologie de charge intelligente.</p></article>
-</section>
-
-<section class="mx-auto w-full max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
-    <h2 class="mb-6 text-3xl font-semibold">Compatible avec tout les appareille</h2>
-    <div class="mx-auto flex max-w-xl flex-wrap items-center justify-center gap-3 text-lg font-medium">
-        <span class="rounded-full border border-zinc-700 px-6 py-2">Apple</span>
-        <span class="rounded-full border border-zinc-700 px-6 py-2">Samsung</span>
-        <span class="rounded-full border border-zinc-700 px-6 py-2">Oppo</span>
-    </div>
-</section>
-
-<section id="comment-marche" class="mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8">
-    <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 p-4">
-        <img src="/assets/mockup.jpg" alt="Battery en situation" class="h-full w-full rounded-2xl object-cover">
-    </div>
-    <div>
-        <h2 class="mb-5 text-3xl font-semibold">Comment ça marche</h2>
-        <ul class="space-y-3 text-zinc-300">
-            <li>Charge plus de 1000 appareil mobile diffrent</li>
-            <li>Permet de charger jusqua 4 cycle de battery (tester sur iphone 17 pro)</li>
-            <li>Plus de 5 colorie différent pour tout les gout</li>
-            <li>Livraison prime en 4 jours seulement</li>
-            <li>Satisfy ou rembourser selon les condition d’utilisation</li>
-        </ul>
-    </div>
-</section>
-
-<section id="faq" class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8" aria-label="FAQ">
-    <h2 class="mb-5 text-center text-3xl font-semibold">FAQ</h2>
-    <div class="space-y-3">
-        <div class="faq-item rounded-2xl border border-zinc-800 bg-zinc-900 p-4">
-            <button class="faq-question flex w-full items-center justify-between text-left font-medium" type="button" aria-expanded="false">Combien de temps dure la charge ?</button>
-            <p class="faq-answer hidden pt-3 text-zinc-300">Jusqu’à 4 cycles complets selon le téléphone.</p>
+    <header class="border-b border-black/10 bg-[#e7e7e7]">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+            <a href="/" class="text-2xl font-medium">LOGO</a>
+            <nav class="hidden items-center gap-8 md:flex" aria-label="Navigation principale">
+                <span class="h-[3px] w-10 bg-black/10"></span>
+                <span class="h-[3px] w-10 bg-black/10"></span>
+                <span class="h-[3px] w-10 bg-black/10"></span>
+                <span class="h-[3px] w-10 bg-black/10"></span>
+            </nav>
+            <a href="/cart" class="text-lg">PANIER</a>
         </div>
-        <div class="faq-item rounded-2xl border border-zinc-800 bg-zinc-900 p-4">
-            <button class="faq-question flex w-full items-center justify-between text-left font-medium" type="button" aria-expanded="false">La battery est-elle en stock ?</button>
-            <p class="faq-answer hidden pt-3 text-zinc-300">Oui, expédition sous 24h en moyenne.</p>
-        </div>
-        <div class="faq-item rounded-2xl border border-zinc-800 bg-zinc-900 p-4">
-            <button class="faq-question flex w-full items-center justify-between text-left font-medium" type="button" aria-expanded="false">Puis-je me faire rembourser ?</button>
-            <p class="faq-answer hidden pt-3 text-zinc-300">Oui, satisfait ou remboursé selon conditions.</p>
-        </div>
-    </div>
-</section>
+    </header>
 
-<section id="buy" class="mx-auto w-full max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
-    <div class="rounded-3xl border border-zinc-700 bg-white px-6 py-14 text-zinc-950">
-        <h2 class="mb-5 text-3xl font-semibold">Rejoigner 10 000 utilisateur</h2>
-        <a class="inline-flex rounded-full bg-zinc-950 px-7 py-3 text-sm font-semibold tracking-wide text-white transition hover:bg-zinc-800" href="#buy">ACHETER MA BATTERY</a>
-    </div>
-</section>
+    <section class="mx-auto max-w-6xl">
+        <div class="flex h-[360px] items-center justify-center bg-[#cfcfcf] md:h-[520px]">
+            <p class="text-5xl font-medium md:text-6xl">VIDEO</p>
+        </div>
+    </section>
 
-<footer class="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
-    <p>© PowerBank Store</p>
-</footer>
+    <div class="mx-auto my-10 h-10 max-w-6xl bg-black"></div>
+
+    <section class="mx-auto max-w-6xl px-4 py-8 md:px-10">
+        <div class="grid gap-10 text-center md:grid-cols-2">
+            <article>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=520&q=80" alt="Produit battery" class="mx-auto h-72 w-56 object-cover" />
+                <h2 class="mt-4 text-3xl">TITRE</h2>
+                <p class="text-2xl">Description</p>
+            </article>
+            <article>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=520&q=80" alt="Produit battery" class="mx-auto h-72 w-56 object-cover" />
+                <h2 class="mt-4 text-3xl">TITRE</h2>
+                <p class="text-2xl">Description</p>
+            </article>
+        </div>
+
+        <p class="py-10 text-center text-3xl">Compatible avec tout les appareille</p>
+
+        <div class="overflow-hidden bg-[#d0d0d0] py-4">
+            <div class="marquee-track flex items-center gap-16 px-8 text-4xl">
+                <span></span>
+                <span class="text-xl font-semibold tracking-[0.2em]">SAMSUNG</span>
+                <span class="text-2xl">barre de logo qui défile a l infini</span>
+                <span class="text-3xl font-semibold text-green-700">oppo</span>
+                <span></span>
+                <span class="text-xl font-semibold tracking-[0.2em]">SAMSUNG</span>
+                <span class="text-2xl">barre de logo qui défile a l infini</span>
+                <span class="text-3xl font-semibold text-green-700">oppo</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="mx-auto my-10 h-10 max-w-6xl bg-black"></div>
+
+    <section class="mx-auto max-w-6xl px-4 py-8 md:px-10">
+        <h2 class="mb-6 text-center text-4xl">Comparatif</h2>
+        <div class="grid items-center gap-10 md:grid-cols-[1fr_auto_1fr]">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=520&q=80" alt="Produit 1" class="mx-auto h-[420px] w-72 object-cover" />
+            <div class="space-y-6">
+                <div class="h-px w-44 bg-black/50"></div>
+                <div class="h-px w-44 bg-black/50"></div>
+                <div class="h-px w-44 bg-black/50"></div>
+                <div class="h-px w-44 bg-black/50"></div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=520&q=80" alt="Produit 2" class="mx-auto h-[420px] w-72 object-cover" />
+        </div>
+    </section>
+
+    <div class="mx-auto my-10 h-10 max-w-6xl bg-black"></div>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 md:px-10">
+        <p class="mb-16 text-center text-4xl">Ne plus avoir de battery est pour eux un lointain souvenir</p>
+        <div class="overflow-hidden bg-[#e2e2e2] py-4">
+            <div class="marquee-track flex items-center gap-20 px-8">
+                <article class="w-48 border border-cyan-100 bg-white p-4 text-center">
+                    <p class="text-sm font-bold tracking-[0.15em]">OUTSIDE NOISE</p>
+                    <p class="mt-2 text-xs">I am absolutely in love with it. Great battery life.</p>
+                </article>
+                <p class="text-3xl">barre d’avis qui défile a l infini</p>
+                <article class="w-48 border border-cyan-100 bg-white p-4 text-center">
+                    <p class="text-sm font-bold tracking-[0.15em]">OUTSIDE NOISE</p>
+                    <p class="mt-2 text-xs">Can’t live without it now. Love this battery.</p>
+                </article>
+                <article class="w-48 border border-cyan-100 bg-white p-4 text-center">
+                    <p class="text-sm font-bold tracking-[0.15em]">OUTSIDE NOISE</p>
+                    <p class="mt-2 text-xs">I am absolutely in love with it. Great battery life.</p>
+                </article>
+                <p class="text-3xl">barre d’avis qui défile a l infini</p>
+                <article class="w-48 border border-cyan-100 bg-white p-4 text-center">
+                    <p class="text-sm font-bold tracking-[0.15em]">OUTSIDE NOISE</p>
+                    <p class="mt-2 text-xs">Can’t live without it now. Love this battery.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="mx-auto my-10 h-10 max-w-6xl bg-black"></div>
+
+    <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-8 md:grid-cols-2 md:px-10">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=520&q=80" alt="Produit battery" class="mx-auto h-[420px] w-72 object-cover" />
+        <div>
+            <h2 class="mb-5 text-5xl">comment ça marche</h2>
+            <ul class="space-y-4 text-xl">
+                <li>Charge plus de 1000 appareil mobile diffrent</li>
+                <li>Permet de charger jusqua 4 cycle de battery (tester sur iphone 17 pro)</li>
+                <li>plus de 5 colorie différent pour tout les gout</li>
+                <li>livraison prime en 4 jours seulement</li>
+                <li>Satisfy ou rembourser selon les condition d’utilisation</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="mx-auto my-10 h-10 max-w-6xl bg-black"></div>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 text-center md:px-10">
+        <h2 class="mb-10 text-5xl">Rejoigner 10 000 utilisateur</h2>
+        <a href="/product" class="inline-block rounded-full bg-[#cfcfcf] px-14 py-4 text-2xl">ACHETER MA BATTERY</a>
+    </section>
+
+    <footer class="bg-[#25314d] text-white">
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 py-8 md:grid-cols-4 md:px-10">
+            <div>
+                <p class="text-3xl font-semibold tracking-[0.08em]">SNOOZ</p>
+            </div>
+            <div>
+                <h3 class="mb-3 font-semibold">Shop</h3>
+                <ul class="space-y-1 text-sm text-white/80">
+                    <li>SNOOZ Pro</li><li>Bundle + Save</li><li>Refurbished</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-3 font-semibold">Support</h3>
+                <ul class="space-y-1 text-sm text-white/80">
+                    <li>Help Center</li><li>Shipping</li><li>Contact Us</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-3 font-semibold">Company</h3>
+                <ul class="space-y-1 text-sm text-white/80">
+                    <li>About Us</li><li>Blog</li><li>Affiliate Program</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
