@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page introuvable | Vantage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-[#F3F0FF] min-h-screen flex items-center justify-center px-4">
+
+    <div
+        class="relative w-full max-w-4xl rounded-[40px] sm:rounded-[60px] overflow-hidden shadow-2xl ring-1 ring-black/5 isolate">
+
+        <!-- Background Glow -->
+        <div class="absolute inset-0 bg-[#F3F0FF] overflow-hidden">
+            <div
+                class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-b from-purple-300 via-indigo-300 to-transparent blur-[120px] opacity-60 animate-pulse mix-blend-multiply">
+            </div>
+            <div
+                class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-violet-400 via-fuchsia-200 to-blue-200 blur-[100px] opacity-50 mix-blend-multiply">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-8 py-20 sm:py-28">
+
+            <!-- 404 Big -->
+            <h1 class="text-[6rem] sm:text-[8rem] font-medium tracking-tight text-gray-900 leading-none mb-6">
+                404
+            </h1>
+
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-4xl font-medium text-gray-900 tracking-tight mb-6">
+                Oups… cette page est introuvable.
+            </h2>
+
+            <!-- Description -->
+            <p class="text-lg text-gray-600 max-w-xl mx-auto mb-12 leading-relaxed">
+                La page que vous recherchez n’existe pas ou a été déplacée.
+                Mais pas d’inquiétude — votre batterie, elle, est toujours prête.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/"
+                    class="inline-flex items-center gap-3 rounded-full bg-black px-8 py-3.5 text-base font-normal text-white hover:bg-gray-800 transition-colors shadow-lg">
+                    Retour à l’accueil
+                    <i data-lucide="arrow-left" stroke-width="1.5" class="w-5 h-5"></i>
+                </a>
+
+                <a href="/product"
+                    class="inline-flex items-center gap-3 rounded-full bg-white px-8 py-3.5 text-base font-normal text-gray-900 border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm">
+                    Voir Vantage Pro
+                    <i data-lucide="zap" stroke-width="1.5" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <!-- Small tech line -->
+            <div class="mt-16 text-sm text-gray-400 tracking-wide">
+                ERREUR_404 • PAGE_NOT_FOUND • VANTAGE_SYSTEM
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

@@ -43,12 +43,11 @@ class Router
 
         $action = $this->routes[$method][$path] ?? null;
 
-        if ($action === null) {
-            http_response_code(404);
-            echo '404 - Page not found';
-            return;
-        }
-
+      if ($action === null) {
+    http_response_code(404);
+    require __DIR__ . '/../Views/404.html';
+    exit;
+}
         [$controllerClass, $controllerMethod] = $action;
         $controller = new $controllerClass();
         $controller->{$controllerMethod}();
